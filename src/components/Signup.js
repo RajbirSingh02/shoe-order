@@ -43,11 +43,9 @@ export const Signup = (props) => {
             firestore.collection('RegisteredUsers').doc(cred.user.uid).set({
                 Name: name,
                 Email: email,
-                Password: password
             }).then(() => {
                 setName('');
                 setEmail('');
-                setPassword('');
                 setError('');
                 props.history.push('/login');
             }).catch(err => setError(err.message));
